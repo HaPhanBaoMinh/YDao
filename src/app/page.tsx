@@ -20,7 +20,7 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto text-center">
             <FadeIn delay={100} direction="none" duration={1000}>
               <p className="font-body text-xs uppercase tracking-[0.2em] text-secondary-500 mb-6">
-                Dịch vụ cưới hỏi cao cấp
+                Dịch vụ cưới hỏi
               </p>
             </FadeIn>
             <FadeIn delay={250} duration={1000} distance={40}>
@@ -32,7 +32,7 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn delay={450} duration={900}>
               <p className="mt-8 font-body text-xl text-neutral-500 leading-relaxed max-w-xl mx-auto">
-                Dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới cao cấp,
+                Dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới,
                 nâng niu từng khoảnh khắc trong ngày trọng đại.
               </p>
             </FadeIn>
@@ -79,7 +79,7 @@ export default function HomePage() {
           <FadeIn>
             <SectionHeading
               title="Sản Phẩm"
-              subtitle="Áo dài cao cấp và phụ kiện đồng bộ cho ngày cưới hỏi trọn vẹn."
+              subtitle="Áo dài và phụ kiện đồng bộ cho ngày cưới hỏi trọn vẹn."
             />
           </FadeIn>
 

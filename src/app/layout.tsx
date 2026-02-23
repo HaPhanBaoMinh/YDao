@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | YDao",
   },
   description:
-    "YDao cung cấp dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới cao cấp tại TP. Hồ Chí Minh. Nâng niu trọn vẹn ngày trọng đại của bạn.",
+    "YDao cung cấp dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới tại TP. Hồ Chí Minh. Nâng niu trọn vẹn ngày trọng đại của bạn.",
   keywords: [
     "bưng quả",
     "cho thuê áo dài",

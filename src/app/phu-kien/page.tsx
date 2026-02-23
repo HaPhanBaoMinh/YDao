@@ -29,7 +29,7 @@ const accessoryCategories = [
   },
   {
     title: "Phụ Kiện Bưng Quả",
-    description: "Khay quả, lồng đèn, nến trang trí, hoa giả cao cấp.",
+    description: "Khay quả, lồng đèn, nến trang trí, hoa giả.",
     count: 45,
   },
   {

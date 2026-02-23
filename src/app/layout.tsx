@@ -21,11 +21,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://thefish.vn"),
   title: {
-    default: "The Fish — Dịch Vụ Bưng Quả & Cho Thuê Áo Dài Cưới",
-    template: "%s | The Fish",
+    default: "YDao — Dịch Vụ Bưng Quả & Cho Thuê Áo Dài Cưới",
+    template: "%s | YDao",
   },
   description:
-    "The Fish cung cấp dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới cao cấp tại TP. Hồ Chí Minh. Nâng niu trọn vẹn ngày trọng đại của bạn.",
+    "YDao cung cấp dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới cao cấp tại TP. Hồ Chí Minh. Nâng niu trọn vẹn ngày trọng đại của bạn.",
   keywords: [
     "bưng quả",
     "cho thuê áo dài",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "vi_VN",
-    siteName: "The Fish",
+    siteName: "YDao",
   },
 };
 

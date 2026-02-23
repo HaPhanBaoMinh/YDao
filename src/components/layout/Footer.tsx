@@ -35,7 +35,7 @@ export function Footer() {
           <div>
             <Link href="/" className="inline-block">
               <span className="font-heading text-3xl text-neutral-900">
-                The Fish
+                YDao
               </span>
             </Link>
             <p className="mt-4 text-base text-neutral-500 font-body leading-relaxed max-w-xs">
@@ -70,7 +70,7 @@ export function Footer() {
       {/* Copyright */}
       <div className="border-t border-neutral-200 py-6">
         <p className="text-center text-sm text-neutral-400 font-body tracking-wide">
-          &copy; 2026 The Fish. All rights reserved.
+          &copy; 2026 YDao. All rights reserved.
         </p>
       </div>
     </footer>

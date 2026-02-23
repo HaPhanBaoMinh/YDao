@@ -39,7 +39,7 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-6">
             <span className="font-heading text-2xl text-neutral-900">
-              The Fish
+              YDao
             </span>
             <button
               onClick={onClose}

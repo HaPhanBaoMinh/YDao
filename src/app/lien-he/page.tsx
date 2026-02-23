@@ -6,7 +6,7 @@ import { ContactForm } from "./ContactForm";
 export const metadata: Metadata = {
   title: "Liên Hệ — Đặt Lịch Tư Vấn Miễn Phí",
   description:
-    "Liên hệ The Fish để nhận tư vấn miễn phí về dịch vụ bưng quả và cho thuê áo dài cưới. Showroom tại Quận 1, TP. Hồ Chí Minh.",
+    "Liên hệ YDao để nhận tư vấn miễn phí về dịch vụ bưng quả và cho thuê áo dài cưới. Showroom tại Quận 1, TP. Hồ Chí Minh.",
 };
 
 export default function ContactPage() {

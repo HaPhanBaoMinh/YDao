@@ -63,7 +63,7 @@ export default function HomePage() {
                 <div className="text-center">
                   <div className="w-16 h-px bg-neutral-300 mx-auto mb-4" />
                   <p className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
-                    The Fish — Since 2021
+                    YDao — Since 2021
                   </p>
                   <div className="w-16 h-px bg-neutral-300 mx-auto mt-4" />
                 </div>
@@ -201,7 +201,7 @@ export default function HomePage() {
             <FadeIn direction="right" distance={40} duration={1000} delay={200}>
               <div className="lg:pl-8">
                 <p className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body">
-                  Về The Fish
+                  Về YDao
                 </p>
                 <h2 className="mt-4 font-heading text-h2 text-neutral-900">
                   Nơi truyền thống
@@ -209,7 +209,7 @@ export default function HomePage() {
                 </h2>
                 <div className="mt-8 space-y-5 font-body text-neutral-500 leading-relaxed">
                   <p>
-                    The Fish ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới
+                    YDao ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới
                     Việt Nam — nơi mỗi chiếc áo dài, mỗi mâm quả đều mang trong
                     mình câu chuyện về tình yêu và lời hứa gắn kết.
                   </p>

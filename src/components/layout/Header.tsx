@@ -83,7 +83,7 @@ export function Header() {
             {/* Logo — Center */}
             <Link href="/" className="flex items-center">
               <span className="font-heading text-3xl sm:text-4xl tracking-tight text-neutral-900">
-                The Fish
+                YDao
               </span>
             </Link>
 

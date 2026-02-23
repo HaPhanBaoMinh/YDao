@@ -8,7 +8,7 @@ import { FadeIn, Stagger } from "@/components/animation/FadeIn";
 export const metadata: Metadata = {
   title: "Phụ Kiện Cưới — Mấn, Trang Sức, Giày & Khăn Vấn",
   description:
-    "Phụ kiện cưới đồng bộ cho áo dài: mấn đội đầu, khăn vấn, trang sức, giày cưới và các phụ kiện bưng quả. Cho thuê tại The Fish.",
+    "Phụ kiện cưới đồng bộ cho áo dài: mấn đội đầu, khăn vấn, trang sức, giày cưới và các phụ kiện bưng quả. Cho thuê tại YDao.",
 };
 
 const accessoryCategories = [
@@ -98,7 +98,7 @@ export default function AccessoriesPage() {
               Cần tư vấn phối phụ kiện?
             </h2>
             <p className="mt-4 font-body text-neutral-500 max-w-md mx-auto">
-              Đội ngũ The Fish sẵn sàng hỗ trợ bạn phối hợp phụ kiện
+              Đội ngũ YDao sẵn sàng hỗ trợ bạn phối hợp phụ kiện
               đồng bộ với áo dài.
             </p>
             <div className="mt-8">

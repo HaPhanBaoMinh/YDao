@@ -7,9 +7,9 @@ import { Parallax } from "@/components/animation/Parallax";
 import { stats, teamMembers } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Về Chúng Tôi — Câu Chuyện Của The Fish",
+  title: "Về Chúng Tôi — Câu Chuyện Của YDao",
   description:
-    "The Fish ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới Việt Nam. Tìm hiểu câu chuyện, sứ mệnh và đội ngũ của chúng tôi.",
+    "YDao ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới Việt Nam. Tìm hiểu câu chuyện, sứ mệnh và đội ngũ của chúng tôi.",
 };
 
 export default function AboutPage() {
@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
           <FadeIn delay={100} direction="none" duration={1000}>
             <p className="text-xs uppercase tracking-[0.2em] text-secondary-500 font-body mb-6">
-              Về The Fish
+              Về YDao
             </p>
           </FadeIn>
           <FadeIn delay={300} duration={1000} distance={40}>
@@ -40,7 +40,7 @@ export default function AboutPage() {
                 <div className="text-center">
                   <div className="w-16 h-px bg-neutral-300 mx-auto mb-4" />
                   <p className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
-                    The Fish — Câu chuyện
+                    YDao — Câu chuyện
                   </p>
                   <div className="w-16 h-px bg-neutral-300 mx-auto mt-4" />
                 </div>
@@ -61,7 +61,7 @@ export default function AboutPage() {
           <FadeIn delay={200} duration={1000}>
             <div className="space-y-6 font-body text-neutral-500 leading-relaxed text-lg">
               <p>
-                The Fish ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới
+                YDao ra đời từ tình yêu với vẻ đẹp truyền thống của lễ cưới
                 Việt Nam — nơi mỗi chiếc áo dài, mỗi mâm quả đều mang trong
                 mình câu chuyện về tình yêu, sự kính trọng và lời hứa gắn kết
                 hai gia đình.
@@ -75,7 +75,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Với hơn 5 năm kinh nghiệm và hơn 500 lễ cưới đã đồng hành,
-                The Fish không ngừng nâng cao chất lượng dịch vụ — để mỗi ngày
+                YDao không ngừng nâng cao chất lượng dịch vụ — để mỗi ngày
                 trọng đại đều trọn vẹn và đáng nhớ.
               </p>
             </div>
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="mt-8 space-y-5 font-body text-neutral-500 leading-relaxed">
                   <p>
-                    Sứ mệnh của The Fish là mang đến trải nghiệm lễ cưới truyền
+                    Sứ mệnh của YDao là mang đến trải nghiệm lễ cưới truyền
                     thống trọn vẹn — nơi mà mỗi chi tiết được chăm chút bằng
                     sự am hiểu văn hóa sâu sắc và thẩm mỹ tinh tế.
                   </p>
@@ -247,7 +247,7 @@ export default function AboutPage() {
               Sẵn Sàng Cho Ngày Trọng Đại?
             </h2>
             <p className="mt-4 font-body text-neutral-500">
-              Hãy để The Fish đồng hành cùng bạn.
+              Hãy để YDao đồng hành cùng bạn.
             </p>
             <div className="mt-8 flex justify-center gap-4">
               <Link href="/lien-he">

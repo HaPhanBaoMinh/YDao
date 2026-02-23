@@ -1,4 +1,4 @@
-# Dreams — Vietnamese Wedding "Bưng Quả" & Áo Dài Rental
+# YDao — Vietnamese Wedding "Bưng Quả" & Áo Dài Rental
 
 > A Next.js website for a Vietnamese wedding ceremony service specializing in
 > "bưng quả" (ceremonial tray bearing) and áo dài rental.
@@ -229,27 +229,27 @@ provides:
 
 | Element | Description |
 |---------|-------------|
-| **Name** | *Dreams* — Evoking aspiration, celebration, and the idealized vision couples have for their wedding day |
+| **Name** | *YDao* — Evoking aspiration, celebration, and the idealized vision couples have for their wedding day |
 | **Tagline** | "Nâng niu trọn vẹn ngày trọng đại" (Cherishing every moment of your special day) |
 | **Voice** | Warm, knowledgeable, reassuring. Like a trusted older sister who knows all the wedding traditions and guides you through them with care |
 | **Positioning** | Premium but accessible. Not the cheapest option, but the one where every detail is handled with cultural understanding and aesthetic precision |
 
 **Unique Value Proposition**
 
-> Dreams combines the artistry of áo dài fashion with the cultural expertise
+> YDao combines the artistry of áo dài fashion with the cultural expertise
 > of traditional Vietnamese wedding ceremonies. We do not just rent costumes
 > — we help families honor the "lễ nghĩa" (ritual and propriety) that makes
 > a Vietnamese wedding meaningful.
 
 **Differentiation from Lalin.vn:**
 
-- Lalin sells individual garments. Dreams provides a **complete ceremony
+- Lalin sells individual garments. YDao provides a **complete ceremony
   service** — people, costumes, and cultural guidance as one package.
-- Lalin targets fashion-conscious women. Dreams targets **couples and
+- Lalin targets fashion-conscious women. YDao targets **couples and
   families** planning a specific life event.
-- Lalin's UX is browse-and-buy. Dreams needs **booking, scheduling, and
+- Lalin's UX is browse-and-buy. YDao needs **booking, scheduling, and
   consultation** flows.
-- Lalin's content is about fashion and beauty. Dreams' content should cover
+- Lalin's content is about fashion and beauty. YDao' content should cover
   **wedding culture, ceremony etiquette, and planning advice**.
 
 ---
@@ -270,7 +270,7 @@ content phase.
 │  "Ưu đãi mùa cưới 2026 — Giảm 15% cho đặt sớm trước 30/04"   │
 ├──────────────────────────────────────────────────────────────────┤
 │                                                                  │
-│  [Dreams Logo]         [Dịch vụ] [Áo dài] [Bộ sưu tập]        │
+│  [YDao Logo]         [Dịch vụ] [Áo dài] [Bộ sưu tập]        │
 │                        [Blog] [Về chúng tôi]    [🔍] [📞]      │
 │                                                                  │
 ├──────────────────────────────────────────────────────────────────┤
@@ -352,7 +352,7 @@ content phase.
 │  │                      │   aliqua. Ut enim ad minim        │   │
 │  │                      │   veniam, quis nostrud..."        │   │
 │  │                      │                                   │   │
-│  │                      │   [ Đọc thêm về Dreams ➝ ]       │   │
+│  │                      │   [ Đọc thêm về YDao ➝ ]       │   │
 │  │                      │                                   │   │
 │  └──────────────────────┴───────────────────────────────────┘   │
 │                                                                  │
@@ -406,7 +406,7 @@ content phase.
 │                                                                  │
 │  FOOTER                                                          │
 │                                                                  │
-│  Dreams                  Dịch vụ              Hỗ trợ            │
+│  YDao                  Dịch vụ              Hỗ trợ            │
 │  "Nâng niu trọn vẹn     ├─ Bưng quả          ├─ FAQ             │
 │   ngày trọng đại"       ├─ Áo dài cưới       ├─ Chính sách      │
 │                          ├─ Áo dài bê tráp    ├─ Hướng dẫn size  │
@@ -418,7 +418,7 @@ content phase.
 │                          └─ Thư viện ảnh      └─ Zalo            │
 │                                                                  │
 │  ─────────────────────────────────────────────────────────────── │
-│  © 2026 Dreams. All rights reserved.                             │
+│  © 2026 YDao. All rights reserved.                             │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
 ```
@@ -647,7 +647,7 @@ content phase.
 │  │                                                          │   │
 │  │  HERO IMAGE (full-width, editorial)                      │   │
 │  │                                                          │   │
-│  │           "Câu Chuyện Của Dreams"                        │   │
+│  │           "Câu Chuyện Của YDao"                        │   │
 │  │                                                          │   │
 │  └──────────────────────────────────────────────────────────┘   │
 │                                                                  │
@@ -1162,7 +1162,7 @@ dreams/
 
 ## Conclusion
 
-This project — **Dreams** — aims to create a premium Vietnamese wedding
+This project — **YDao** — aims to create a premium Vietnamese wedding
 service website that combines the cultural storytelling sophistication of
 Lalin.vn with the practical booking and rental functionality that couples
 and families need when planning a bưng quả ceremony.

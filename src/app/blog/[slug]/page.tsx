@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { FadeIn, Stagger } from "@/components/animation/FadeIn";
-import { blogPosts } from "@/lib/data";
+import { blogPosts, type BlogBlock, type RichText } from "@/lib/data";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -24,12 +25,97 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function RichTextRenderer({ segments }: { segments: RichText[] }) {
+  return (
+    <>
+      {segments.map((seg, i) =>
+        seg.bold ? (
+          <strong key={i}>{seg.text}</strong>
+        ) : (
+          <span key={i}>{seg.text}</span>
+        )
+      )}
+    </>
+  );
+}
+
+function BlockRenderer({ block, basePath }: { block: BlogBlock; basePath: string }) {
+  switch (block.type) {
+    case "heading_2":
+      return (
+        <h2>
+          {block.richText && <RichTextRenderer segments={block.richText} />}
+        </h2>
+      );
+    case "heading_3":
+      return (
+        <h3>
+          {block.richText && <RichTextRenderer segments={block.richText} />}
+        </h3>
+      );
+    case "paragraph":
+      return (
+        <p>
+          {block.richText && <RichTextRenderer segments={block.richText} />}
+        </p>
+      );
+    case "bulleted_list_item":
+      return null;
+    case "image":
+      return (
+        <figure className="my-8">
+          <div className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-100">
+            <Image
+              src={`${basePath}${block.imageUrl}`}
+              alt={block.imageAlt || ""}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 672px"
+            />
+          </div>
+          {block.imageAlt && (
+            <figcaption className="mt-3 text-center text-sm text-neutral-400 font-body">
+              {block.imageAlt}
+            </figcaption>
+          )}
+        </figure>
+      );
+    case "divider":
+      return <hr />;
+    default:
+      return null;
+  }
+}
+
+function groupBulletItems(blocks: BlogBlock[]): (BlogBlock | BlogBlock[])[] {
+  const grouped: (BlogBlock | BlogBlock[])[] = [];
+  let currentBullets: BlogBlock[] = [];
+
+  for (const block of blocks) {
+    if (block.type === "bulleted_list_item") {
+      currentBullets.push(block);
+    } else {
+      if (currentBullets.length > 0) {
+        grouped.push(currentBullets);
+        currentBullets = [];
+      }
+      grouped.push(block);
+    }
+  }
+  if (currentBullets.length > 0) {
+    grouped.push(currentBullets);
+  }
+  return grouped;
+}
+
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) notFound();
 
   const related = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
+  const hasContent = post.content && post.content.length > 0;
+  const basePath = process.env.NODE_ENV === "production" ? "/YDao" : "";
 
   return (
     <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
@@ -60,57 +146,61 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </FadeIn>
 
-        {/* Featured frame */}
+        {/* Cover image */}
         <FadeIn delay={200} duration={1000}>
-          <div className="aspect-[2/1] bg-neutral-100 flex items-center justify-center mb-12 hover-scale">
-            <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
-              {post.category}
-            </span>
-          </div>
+          {post.image.startsWith("/blog/") ? (
+            <div className="relative aspect-[2/1] w-full overflow-hidden bg-neutral-100 mb-12">
+              <Image
+                src={`${basePath}${post.image}`}
+                alt={post.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 672px"
+                priority
+              />
+            </div>
+          ) : (
+            <div className="aspect-[2/1] bg-neutral-100 flex items-center justify-center mb-12 hover-scale">
+              <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
+                {post.category}
+              </span>
+            </div>
+          )}
         </FadeIn>
 
         {/* Article Body */}
         <FadeIn delay={300} duration={900}>
-          <div className="prose prose-neutral max-w-none font-body prose-headings:font-heading prose-headings:font-normal prose-headings:tracking-tight prose-a:text-neutral-900 prose-a:underline-offset-4">
-            <p>
-              Trong văn hóa cưới hỏi Việt Nam, mỗi nghi lễ đều mang trong mình
-              những ý nghĩa sâu sắc về tình yêu, lòng hiếu thảo và sự kết nối
-              giữa hai gia đình.
-            </p>
-
-            <h2>Ý Nghĩa Của Truyền Thống</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris.
-            </p>
-            <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-
-            <h2>Những Điều Cần Lưu Ý</h2>
-            <p>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit, sed quia consequuntur magni dolores eos.
-            </p>
-            <ul>
-              <li>
-                Chọn số mâm quả phù hợp với phong tục vùng miền.
-              </li>
-              <li>
-                Áo dài cho đội bê tráp nên đồng bộ về màu sắc.
-              </li>
-              <li>
-                Chuẩn bị tối thiểu 2-3 tháng trước ngày lễ.
-              </li>
-            </ul>
-
-            <h2>Lời Kết</h2>
-            <p>
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui
-              blanditiis praesentium voluptatum deleniti atque corrupti.
-            </p>
+          <div className="prose prose-neutral max-w-none font-body prose-headings:font-heading prose-headings:font-normal prose-headings:tracking-tight prose-a:text-neutral-900 prose-a:underline-offset-4 prose-img:rounded-none">
+            {hasContent ? (
+              groupBulletItems(post.content!).map((item, i) => {
+                if (Array.isArray(item)) {
+                  return (
+                    <ul key={i}>
+                      {item.map((bullet, j) => (
+                        <li key={j}>
+                          {bullet.richText && (
+                            <RichTextRenderer segments={bullet.richText} />
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  );
+                }
+                return <BlockRenderer key={i} block={item} basePath={basePath} />;
+              })
+            ) : (
+              <>
+                <p>
+                  Trong văn hóa cưới hỏi Việt Nam, mỗi nghi lễ đều mang trong mình
+                  những ý nghĩa sâu sắc về tình yêu, lòng hiếu thảo và sự kết nối
+                  giữa hai gia đình.
+                </p>
+                <h2>Ý Nghĩa Của Truyền Thống</h2>
+                <p>
+                  Bài viết đang được cập nhật nội dung...
+                </p>
+              </>
+            )}
           </div>
         </FadeIn>
 
@@ -140,10 +230,20 @@ export default async function BlogPostPage({ params }: Props) {
               href={`/blog/${p.slug}`}
               className="group block"
             >
-              <div className="aspect-[3/2] bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150 hover-scale">
-                <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
-                  {p.category}
-                </span>
+              <div className="relative aspect-[3/2] bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150 hover-scale overflow-hidden">
+                {p.image.startsWith("/blog/") ? (
+                  <Image
+                    src={`${basePath}${p.image}`}
+                    alt={p.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                ) : (
+                  <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
+                    {p.category}
+                  </span>
+                )}
               </div>
               <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-2">
                 <span>{p.category}</span>

@@ -20,6 +20,18 @@ export interface Product {
   available: boolean;
 }
 
+export interface RichText {
+  text: string;
+  bold?: boolean;
+}
+
+export interface BlogBlock {
+  type: "paragraph" | "heading_2" | "heading_3" | "image" | "bulleted_list_item" | "divider";
+  richText?: RichText[];
+  imageUrl?: string;
+  imageAlt?: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -28,6 +40,7 @@ export interface BlogPost {
   date: string;
   category: string;
   readTime: string;
+  content?: BlogBlock[];
 }
 
 export interface Service {
@@ -247,13 +260,108 @@ export const services: Service[] = [
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "y-nghia-le-bung-qua-trong-dam-hoi",
-    title: "Ý nghĩa lễ bưng quả trong đám hỏi Việt Nam",
-    excerpt: "Lễ bưng quả không chỉ là nghi thức mang sính lễ từ nhà trai sang nhà gái mà còn chứa đựng những giá trị văn hóa sâu sắc về tình yêu, sự kính trọng và lời hứa gắn kết hai gia đình.",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=500&fit=crop",
-    date: "2026-02-10",
+    slug: "nguon-goc-va-y-nghia-nghi-thuc-bung-qua",
+    title: "Nguồn gốc và Ý nghĩa của Nghi thức Bưng Quả trong Lễ cưới Việt Nam",
+    excerpt: "Trong văn hóa cưới hỏi Việt Nam, khoảnh khắc đoàn nhà trai chỉnh tề mang tráp lễ sang nhà gái không chỉ là một thủ tục — đó là lời chào trang trọng giữa hai gia đình, là dấu mốc mở đầu cho hành trình hôn nhân.",
+    image: "/blog/nguon-goc-bung-qua-1.png",
+    date: "2026-02-23",
     category: "Văn hóa cưới",
-    readTime: "5 phút đọc",
+    readTime: "6 phút đọc",
+    content: [
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Trong văn hóa cưới hỏi Việt Nam, khoảnh khắc đoàn nhà trai chỉnh tề mang tráp lễ sang nhà gái không chỉ là một thủ tục. Đó là " },
+          { text: "lời chào trang trọng giữa hai gia đình", bold: true },
+          { text: ", là dấu mốc mở đầu cho hành trình hôn nhân của đôi trẻ. Dù xã hội hiện đại thay đổi nhiều, nghi thức bưng quả vẫn được gìn giữ vì giá trị tinh thần sâu sắc mà nó đại diện." },
+        ],
+      },
+      {
+        type: "heading_2",
+        richText: [{ text: "Nguồn gốc của nghi thức bưng quả" }],
+      },
+      {
+        type: "image",
+        imageUrl: "/blog/nguon-goc-bung-qua-1.png",
+        imageAlt: "Nghi thức bưng quả truyền thống trong lễ cưới Việt Nam",
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Nghi thức bưng quả bắt nguồn từ " },
+          { text: "Lễ Nạp Tài", bold: true },
+          { text: " trong phong tục cưới hỏi truyền thống Á Đông. Ngày xưa, sính lễ là cách nhà trai thể hiện thành ý, sự tôn trọng và trách nhiệm với nhà gái. Qua thời gian, hình thức có thể thay đổi, nhưng tinh thần cốt lõi vẫn còn nguyên: " },
+          { text: "sự trân trọng và chính danh", bold: true },
+          { text: "." },
+        ],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Trong dân gian, câu chuyện Sơn Tinh – Thủy Tinh (với lễ vật \"voi chín ngà, gà chín cựa, ngựa chín hồng mao\") dù chỉ là huyền thoại nhưng phản ánh một nét văn hóa quan trọng: " },
+          { text: "sính lễ là biểu tượng của lòng thành, của cam kết", bold: true },
+          { text: ". Từ tinh thần ấy, bưng quả ngày nay được xem là sự tiếp nối truyền thống, thể hiện sự nghiêm túc và tấm lòng kính trọng trong việc dựng vợ gả chồng." },
+        ],
+      },
+      {
+        type: "heading_2",
+        richText: [{ text: "Ý nghĩa của các yếu tố trong nghi thức bưng quả" }],
+      },
+      {
+        type: "image",
+        imageUrl: "/blog/nguon-goc-bung-qua-2.png",
+        imageAlt: "Mâm sính lễ và đội hình bưng quả trong đám hỏi",
+      },
+      {
+        type: "bulleted_list_item",
+        richText: [
+          { text: "Mâm sính lễ", bold: true },
+          { text: ": không chỉ là lễ vật mà còn là biểu tượng. Trầu cau gợi nhắc nghĩa vợ chồng thủy chung. Bánh phu thê gửi gắm ước mong hôn nhân viên mãn. Trà và rượu thể hiện sự kính trọng dâng lên tổ tiên và hai bên gia đình. Số lượng mâm quả (thường là số chẵn hoặc con số đẹp tùy vùng miền) hàm ý may mắn và đủ đầy." },
+        ],
+      },
+      {
+        type: "bulleted_list_item",
+        richText: [
+          { text: "Đội hình bưng quả", bold: true },
+          { text: ": dàn nam thanh nữ tú trong áo dài truyền thống tạo nên sự trang trọng, đồng thời khẳng định bản sắc văn hóa Việt. Sự đồng đều về tác phong và trang phục thể hiện sự tôn trọng với buổi lễ và gia đình hai bên." },
+        ],
+      },
+      {
+        type: "bulleted_list_item",
+        richText: [
+          { text: "Nghi thức trao – nhận mâm quả", bold: true },
+          { text: ": là khoảnh khắc kết nối. Việc trao nhau mâm lễ không đơn thuần là trao quà, mà là sự đồng thuận và gắn kết chính thức giữa hai gia đình cho tương lai của đôi trẻ." },
+        ],
+      },
+      {
+        type: "heading_2",
+        richText: [{ text: "Giá trị trong đời sống hiện đại" }],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Ngày nay, nhiều nghi thức có thể được giản lược, nhưng bưng quả vẫn thường được xem là phần trang trọng nhất của lễ ăn hỏi. Nghi thức này giúp các cặp đôi thể hiện sự tôn trọng gia đình, gìn giữ truyền thống và khẳng định một khởi đầu hôn nhân được chuẩn bị chỉn chu." },
+        ],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Không chỉ mang ý nghĩa tinh thần, bưng quả còn tạo nên những khoảnh khắc đẹp và hình ảnh đáng nhớ trong ngày trọng đại. Sự chỉn chu trong từng mâm lễ, trang phục và bước di chuyển làm buổi lễ thêm long trọng, đồng thời thể hiện sự trân trọng dành cho hạnh phúc lứa đôi." },
+        ],
+      },
+      {
+        type: "heading_2",
+        richText: [{ text: "Lời kết" }],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Bưng quả không chỉ là một thủ tục cưới hỏi, mà là " },
+          { text: "biểu tượng của sự tôn trọng và hòa hợp giữa hai gia đình", bold: true },
+          { text: ". Dù thời đại có đổi thay, những giá trị truyền thống này vẫn là nền tảng vững chắc cho một mái ấm được chúc phúc đủ đầy." },
+        ],
+      },
+    ],
   },
   {
     slug: "cach-chon-ao-dai-phu-hop-cho-ngay-cuoi",

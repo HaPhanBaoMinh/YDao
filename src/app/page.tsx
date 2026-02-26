@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -283,27 +284,40 @@ export default function HomePage() {
           </FadeIn>
 
           <Stagger className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" stagger={120}>
-            {featuredPosts.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="group block"
-              >
-                <div className="aspect-[3/2] bg-white flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-50 hover-scale">
-                  <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
-                    {post.category}
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-2">
-                  <span>{post.category}</span>
-                  <span className="w-4 h-px bg-neutral-300" />
-                  <span>{post.readTime}</span>
-                </div>
-                <h3 className="font-heading text-xl text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug">
-                  {post.title}
-                </h3>
-              </Link>
-            ))}
+            {featuredPosts.map((post) => {
+              const basePath = process.env.NODE_ENV === "production" ? "/YDao" : "";
+              return (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="group block"
+                >
+                  <div className="relative aspect-[3/2] bg-white flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-50 hover-scale overflow-hidden">
+                    {post.image.startsWith("/blog/") ? (
+                      <Image
+                        src={`${basePath}${post.image}`}
+                        alt={post.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    ) : (
+                      <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
+                        {post.category}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-2">
+                    <span>{post.category}</span>
+                    <span className="w-4 h-px bg-neutral-300" />
+                    <span>{post.readTime}</span>
+                  </div>
+                  <h3 className="font-heading text-xl text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug">
+                    {post.title}
+                  </h3>
+                </Link>
+              );
+            })}
           </Stagger>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
@@ -10,6 +11,38 @@ export const metadata: Metadata = {
   description:
     "Cập nhật kiến thức về cưới hỏi truyền thống, hướng dẫn chọn áo dài, xu hướng thời trang cưới và văn hóa bưng quả Việt Nam.",
 };
+
+function BlogImage({
+  src,
+  alt,
+  category,
+  sizes,
+}: {
+  src: string;
+  alt: string;
+  category: string;
+  sizes: string;
+}) {
+  const basePath = process.env.NODE_ENV === "production" ? "/YDao" : "";
+
+  if (src.startsWith("/blog/")) {
+    return (
+      <Image
+        src={`${basePath}${src}`}
+        alt={alt}
+        fill
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
+        sizes={sizes}
+      />
+    );
+  }
+
+  return (
+    <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
+      {category}
+    </span>
+  );
+}
 
 export default function BlogPage() {
   const featured = blogPosts[0];
@@ -37,10 +70,13 @@ export default function BlogPage() {
           href={`/blog/${featured.slug}`}
           className="group grid gap-10 lg:grid-cols-2 items-center mb-20 lg:mb-24"
         >
-          <div className="aspect-[3/2] bg-neutral-100 flex items-center justify-center transition-all duration-500 group-hover:bg-neutral-150 hover-scale">
-            <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
-              {featured.category}
-            </span>
+          <div className="relative aspect-[3/2] bg-neutral-100 flex items-center justify-center transition-all duration-500 group-hover:bg-neutral-150 hover-scale overflow-hidden">
+            <BlogImage
+              src={featured.image}
+              alt={featured.title}
+              category={featured.category}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
           <div>
             <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-4">
@@ -71,10 +107,13 @@ export default function BlogPage() {
             href={`/blog/${post.slug}`}
             className="group block"
           >
-            <div className="aspect-[3/2] bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150 hover-scale">
-              <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
-                {post.category}
-              </span>
+            <div className="relative aspect-[3/2] bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150 hover-scale overflow-hidden">
+              <BlogImage
+                src={post.image}
+                alt={post.title}
+                category={post.category}
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
             </div>
             <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-2">
               <span>{post.category}</span>

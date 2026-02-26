@@ -282,7 +282,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        imageUrl: "/blog/nguon-goc-bung-qua-1.jpg",
+        imageUrl: "/blog/nguon-goc-bung-qua-2-new.png",
         imageAlt: "Nghi thức bưng quả truyền thống trong lễ cưới Việt Nam",
       },
       {

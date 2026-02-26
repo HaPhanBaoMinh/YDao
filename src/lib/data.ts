@@ -263,7 +263,7 @@ export const blogPosts: BlogPost[] = [
     slug: "nguon-goc-va-y-nghia-nghi-thuc-bung-qua",
     title: "Nguồn gốc và Ý nghĩa của Nghi thức Bưng Quả trong Lễ cưới Việt Nam",
     excerpt: "Trong văn hóa cưới hỏi Việt Nam, khoảnh khắc đoàn nhà trai chỉnh tề mang tráp lễ sang nhà gái không chỉ là một thủ tục — đó là lời chào trang trọng giữa hai gia đình, là dấu mốc mở đầu cho hành trình hôn nhân.",
-    image: "/blog/nguon-goc-bung-qua-1.png",
+    image: "/blog/nguon-goc-bung-qua-1.jpg",
     date: "2026-02-23",
     category: "Văn hóa cưới",
     readTime: "6 phút đọc",
@@ -282,7 +282,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "image",
-        imageUrl: "/blog/nguon-goc-bung-qua-1.png",
+        imageUrl: "/blog/nguon-goc-bung-qua-1.jpg",
         imageAlt: "Nghi thức bưng quả truyền thống trong lễ cưới Việt Nam",
       },
       {

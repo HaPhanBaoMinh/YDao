@@ -2,8 +2,8 @@
 
 @theme inline {
   /* ── Fonts ── */
-  --font-heading: var(--font-playfair), "Georgia", "Times New Roman", serif;
-  --font-body: var(--font-dm-sans), "Helvetica Neue", "Arial", sans-serif;
+  --font-heading: var(--font-cormorant), "Georgia", "Times New Roman", serif;
+  --font-body: var(--font-nunito-sans), "Helvetica Neue", "Arial", sans-serif;
 
   /* ── Primary — Deep Charcoal / Near-Black ── */
   --color-primary-50: #FAFAF9;

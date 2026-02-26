@@ -43,13 +43,13 @@ function BlockRenderer({ block, basePath }: { block: BlogBlock; basePath: string
   switch (block.type) {
     case "heading_2":
       return (
-        <h2>
+        <h2 className="font-heading text-h2 text-neutral-900 mt-14 mb-5 pb-3 border-b border-neutral-200">
           {block.richText && <RichTextRenderer segments={block.richText} />}
         </h2>
       );
     case "heading_3":
       return (
-        <h3>
+        <h3 className="font-heading text-h3 text-neutral-900 mt-10 mb-4">
           {block.richText && <RichTextRenderer segments={block.richText} />}
         </h3>
       );
@@ -195,7 +195,7 @@ export default async function BlogPostPage({ params }: Props) {
                   những ý nghĩa sâu sắc về tình yêu, lòng hiếu thảo và sự kết nối
                   giữa hai gia đình.
                 </p>
-                <h2>Ý Nghĩa Của Truyền Thống</h2>
+                <h2 className="font-heading text-h2 text-neutral-900 mt-14 mb-5 pb-3 border-b border-neutral-200">Ý Nghĩa Của Truyền Thống</h2>
                 <p>
                   Bài viết đang được cập nhật nội dung...
                 </p>

@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { FadeIn, Stagger } from "@/components/animation/FadeIn";
 import { blogPosts, type BlogBlock, type RichText } from "@/lib/data";
+import { basePath } from "@/lib/config";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -115,7 +116,6 @@ export default async function BlogPostPage({ params }: Props) {
 
   const related = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
   const hasContent = post.content && post.content.length > 0;
-  const basePath = process.env.NODE_ENV === "production" ? "/YDao" : "";
 
   return (
     <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">

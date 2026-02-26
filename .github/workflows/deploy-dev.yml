@@ -1,8 +1,8 @@
-name: Deploy to GitHub Pages
+name: Deploy Dev (GitHub Pages)
 
 on:
   push:
-    branches: [main]
+    branches: [dev]
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "pages-dev"
   cancel-in-progress: false
 
 jobs:
@@ -32,6 +32,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: "/YDao"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

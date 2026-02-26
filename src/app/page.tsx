@@ -8,6 +8,7 @@ import { ProductCard } from "@/components/product/ProductCard";
 import { FadeIn, Stagger } from "@/components/animation/FadeIn";
 import { Parallax } from "@/components/animation/Parallax";
 import { products, processSteps, testimonials, blogPosts } from "@/lib/data";
+import { basePath } from "@/lib/config";
 
 export default function HomePage() {
   const featuredProducts = products.slice(0, 4);
@@ -284,9 +285,7 @@ export default function HomePage() {
           </FadeIn>
 
           <Stagger className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" stagger={120}>
-            {featuredPosts.map((post) => {
-              const basePath = process.env.NODE_ENV === "production" ? "/YDao" : "";
-              return (
+            {featuredPosts.map((post) => (
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
@@ -316,8 +315,7 @@ export default function HomePage() {
                     {post.title}
                   </h3>
                 </Link>
-              );
-            })}
+            ))}
           </Stagger>
         </div>
       </section>

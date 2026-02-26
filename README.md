@@ -34,6 +34,20 @@ src/
 - **Heading:** Cormorant Garamond
 - **Body:** Nunito Sans
 
+## CI/CD
+
+| Branch | Môi trường | Deploy |
+|--------|------------|--------|
+| `dev`  | Test       | GitHub Pages (`username.github.io/YDao`) |
+| `main` | Production | Cloudflare Pages (`aodaiydao.com`) |
+
+**Cấu hình GitHub Secrets** (Settings → Secrets and variables → Actions):
+
+- `CLOUDFLARE_API_TOKEN` — Token từ Cloudflare (My Profile → API Tokens → Create Token → Edit Cloudflare Workers)
+- `CLOUDFLARE_ACCOUNT_ID` — Xem ở Cloudflare Dashboard (bên phải sidebar)
+
+**Cloudflare Pages:** Tạo project `ydao` và thêm custom domain `aodaiydao.com`.
+
 ---
 
 Chi tiết phân tích & kế hoạch: xem `ANALYSIS_AND_PLAN.md`

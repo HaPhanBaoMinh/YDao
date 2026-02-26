@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { FadeIn, Stagger } from "@/components/animation/FadeIn";
 import { blogPosts } from "@/lib/data";
+import { basePath } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Blog — Kiến Thức Cưới Hỏi & Áo Dài",
@@ -23,8 +24,6 @@ function BlogImage({
   category: string;
   sizes: string;
 }) {
-  const basePath = process.env.NODE_ENV === "production" ? "/YDao" : "";
-
   if (src.startsWith("/blog/")) {
     return (
       <Image

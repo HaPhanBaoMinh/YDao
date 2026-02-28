@@ -18,15 +18,16 @@ export default function HomePage() {
     <>
       {/* ═══ HERO ═══ */}
       <section className="relative py-22 lg:py-38 overflow-hidden min-h-[90vh] flex items-center">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 w-full h-full">
           <Image
             src={`${basePath}/hero-bg.jpg`}
             alt="Hero background"
             fill
             className="object-cover object-center"
+            sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-white/30 sm:from-white/90 sm:via-white/60 sm:to-transparent" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="max-w-xl text-left">
@@ -43,20 +44,20 @@ export default function HomePage() {
               </h1>
             </FadeIn>
             <FadeIn delay={450} duration={900}>
-              <p className="mt-8 font-body text-xl text-neutral-500 leading-relaxed max-w-xl">
+              <p className="mt-8 font-body text-lg sm:text-xl text-neutral-500 leading-relaxed max-w-xl">
                 Dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới,
                 nâng niu từng khoảnh khắc trong ngày trọng đại.
               </p>
             </FadeIn>
             <FadeIn delay={600} duration={900}>
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Link href="/lien-he">
-                  <Button size="lg">
+              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                <Link href="/lien-he" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full sm:w-auto">
                     Đặt lịch tư vấn
                   </Button>
                 </Link>
-                <Link href="/ao-dai">
-                  <Button variant="outline" size="lg">
+                <Link href="/ao-dai" className="w-full sm:w-auto">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto">
                     Khám phá áo dài
                   </Button>
                 </Link>

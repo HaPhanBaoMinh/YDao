@@ -474,21 +474,21 @@ export const processSteps = [
   {
     step: 1,
     title: "Tư vấn & Đặt lịch",
-    description: "Liên hệ với chúng tôi qua điện thoại, Zalo hoặc đến trực tiếp cửa hàng. Chúng tôi sẽ lắng nghe nhu cầu và tư vấn gói dịch vụ phù hợp nhất.",
+    description: "Liên hệ qua điện thoại, Zalo hoặc đến cửa hàng. Chúng tôi lắng nghe nhu cầu và đề xuất gói dịch vụ phù hợp.",
   },
   {
     step: 2,
     title: "Chọn áo dài",
-    description: "Đến showroom thử và chọn áo dài cho cô dâu, chú rể, đội bê tráp và gia đình. Chúng tôi hỗ trợ phối màu và chọn size chuẩn.",
+    description: "Thử và chọn áo dài cho cô dâu, chú rể, đội bê tráp và gia đình. Hỗ trợ phối màu và chọn size chuẩn.",
   },
   {
     step: 3,
     title: "Chuẩn bị & Tổng duyệt",
-    description: "Trang phục được giặt ủi cẩn thận, đóng gói chuyên nghiệp. Đội bưng quả được hướng dẫn nghi lễ và tổng duyệt trước ngày trọng đại.",
+    description: "Trang phục được giặt ủi kỹ lưỡng, đóng gói gọn gàng. Đội bưng quả được hướng dẫn nghi lễ và tổng duyệt trước ngày cưới.",
   },
   {
     step: 4,
     title: "Ngày trọng đại",
-    description: "Mọi thứ đã sẵn sàng — đội bưng quả có mặt đúng giờ, trang phục hoàn hảo. Bạn chỉ cần tận hưởng khoảnh khắc hạnh phúc nhất.",
+    description: "Đội bưng quả có mặt đúng giờ, trang phục chỉnh chu. Bạn chỉ cần tận hưởng khoảnh khắc hạnh phúc.",
   },
 ];

@@ -17,29 +17,39 @@ export default function HomePage() {
   return (
     <>
       {/* ═══ HERO ═══ */}
-      <section className="py-24 lg:py-40">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-22 lg:py-38 overflow-hidden min-h-[90vh] flex items-center">
+        <div className="absolute inset-0">
+          <Image
+            src={`${basePath}/hero-bg.jpg`}
+            alt="Hero background"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
+          <div className="max-w-xl text-left">
             <FadeIn delay={100} direction="none" duration={1000}>
               <p className="font-body text-xs uppercase tracking-[0.2em] text-secondary-500 mb-6">
                 Dịch vụ cưới hỏi
               </p>
             </FadeIn>
             <FadeIn delay={250} duration={1000} distance={40}>
-              <h1 className="font-heading text-display text-neutral-900 leading-[1.05]">
+              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-neutral-900 leading-[1.1]">
                 Trọn vẹn lễ nghĩa,
                 <br />
                 trọn vẹn yêu thương
               </h1>
             </FadeIn>
             <FadeIn delay={450} duration={900}>
-              <p className="mt-8 font-body text-xl text-neutral-500 leading-relaxed max-w-xl mx-auto">
+              <p className="mt-8 font-body text-xl text-neutral-500 leading-relaxed max-w-xl">
                 Dịch vụ bưng quả chuyên nghiệp và cho thuê áo dài cưới,
                 nâng niu từng khoảnh khắc trong ngày trọng đại.
               </p>
             </FadeIn>
             <FadeIn delay={600} duration={900}>
-              <div className="mt-10 flex flex-wrap gap-4 justify-center">
+              <div className="mt-10 flex flex-wrap gap-4">
                 <Link href="/lien-he">
                   <Button size="lg">
                     Đặt lịch tư vấn
@@ -133,7 +143,7 @@ export default function HomePage() {
           <FadeIn>
             <SectionHeading
               title="Quy Trình"
-              subtitle="Bốn bước đơn giản để có ngày trọng đại hoàn hảo."
+              subtitle="4 bước đơn giản cho ngày trọng đại trọn vẹn."
             />
           </FadeIn>
 

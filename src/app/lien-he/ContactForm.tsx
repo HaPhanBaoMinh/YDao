@@ -95,12 +95,11 @@ export function ContactForm() {
 
       <div>
         <label className="block text-xs uppercase tracking-[0.12em] text-neutral-400 mb-2 font-body">
-          Email *
-        </label>
-        <input
+          Email
+          </label>
+          <input
           name="email"
           type="email"
-          required
           placeholder="email@example.com"
           className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-base font-body text-neutral-900 placeholder:text-neutral-400 focus:border-neutral-900 focus:outline-none transition-colors"
         />

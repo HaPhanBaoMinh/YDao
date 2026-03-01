@@ -44,8 +44,9 @@ function BlogImage({
 }
 
 export default function BlogPage() {
-  const featured = blogPosts[0];
-  const rest = blogPosts.slice(1);
+  const publishedPosts = blogPosts.filter((p) => p.content && p.content.length > 0);
+  const featured = publishedPosts[0];
+  const rest = publishedPosts.slice(1);
 
   return (
     <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
@@ -99,35 +100,39 @@ export default function BlogPage() {
       </FadeIn>
 
       {/* Grid */}
-      <Stagger className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 pb-24 lg:pb-32 border-t border-neutral-200 pt-16" stagger={120}>
-        {rest.map((post) => (
-          <Link
-            key={post.slug}
-            href={`/blog/${post.slug}`}
-            className="group block"
-          >
-            <div className="relative aspect-[3/2] bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150 hover-scale overflow-hidden">
-              <BlogImage
-                src={post.image}
-                alt={post.title}
-                category={post.category}
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            </div>
-            <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-2">
-              <span>{post.category}</span>
-              <span className="w-4 h-px bg-neutral-300" />
-              <span>{post.readTime}</span>
-            </div>
-            <h3 className="font-heading text-xl text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug line-clamp-2">
-              {post.title}
-            </h3>
-            <p className="mt-2 text-base text-neutral-500 font-body line-clamp-2">
-              {post.excerpt}
-            </p>
-          </Link>
-        ))}
-      </Stagger>
+      {rest.length > 0 && (
+        <Stagger className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 pb-24 lg:pb-32 border-t border-neutral-200 pt-16" stagger={120}>
+          {rest.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group block"
+            >
+              <div className="relative aspect-[3/2] bg-neutral-100 flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-150 hover-scale overflow-hidden">
+                <BlogImage
+                  src={post.image}
+                  alt={post.title}
+                  category={post.category}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+              <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-2">
+                <span>{post.category}</span>
+                <span className="w-4 h-px bg-neutral-300" />
+                <span>{post.readTime}</span>
+              </div>
+              <h3 className="font-heading text-xl text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug line-clamp-2">
+                {post.title}
+              </h3>
+              <p className="mt-2 text-base text-neutral-500 font-body line-clamp-2">
+                {post.excerpt}
+              </p>
+            </Link>
+          ))}
+        </Stagger>
+      )}
+
+      <div className="pb-24 lg:pb-32" />
     </div>
   );
 }

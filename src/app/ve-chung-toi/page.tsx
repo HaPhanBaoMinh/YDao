@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { FadeIn, Stagger } from "@/components/animation/FadeIn";
 import { Parallax } from "@/components/animation/Parallax";
-import { stats, teamMembers } from "@/lib/data";
+import { stats } from "@/lib/data";
+import { basePath } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Về Chúng Tôi — Câu Chuyện Của YDao",
@@ -36,14 +38,15 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <Parallax speed={0.06}>
             <FadeIn duration={1200}>
-              <div className="aspect-[16/7] bg-neutral-100 flex items-center justify-center hover-scale">
-                <div className="text-center">
-                  <div className="w-16 h-px bg-neutral-300 mx-auto mb-4" />
-                  <p className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
-                    YDao — Câu chuyện
-                  </p>
-                  <div className="w-16 h-px bg-neutral-300 mx-auto mt-4" />
-                </div>
+              <div className="relative aspect-[16/7] overflow-hidden hover-scale">
+                <Image
+                  src={`${basePath}/ve-chung-toi.jpg`}
+                  alt="YDao — Câu chuyện"
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                  priority
+                />
               </div>
             </FadeIn>
           </Parallax>
@@ -89,14 +92,14 @@ export default function AboutPage() {
           <div className="grid gap-16 lg:grid-cols-2 items-center">
             <Parallax speed={0.05}>
               <FadeIn direction="left" distance={40} duration={1000}>
-                <div className="aspect-[4/5] bg-white flex items-center justify-center hover-scale">
-                  <div className="text-center">
-                    <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
-                    <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
-                      Sứ mệnh
-                    </span>
-                    <div className="w-12 h-px bg-neutral-300 mx-auto mt-4" />
-                  </div>
+                <div className="relative aspect-[4/5] overflow-hidden hover-scale">
+                  <Image
+                    src={`${basePath}/gia-tri.jpg`}
+                    alt="Sứ mệnh YDao"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
               </FadeIn>
             </Parallax>
@@ -173,14 +176,14 @@ export default function AboutPage() {
             </div>
             <Parallax speed={0.05}>
               <FadeIn direction="right" distance={40} duration={1000}>
-                <div className="aspect-[4/5] bg-neutral-100 flex items-center justify-center hover-scale">
-                  <div className="text-center">
-                    <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
-                    <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
-                      Giá trị
-                    </span>
-                    <div className="w-12 h-px bg-neutral-300 mx-auto mt-4" />
-                  </div>
+                <div className="relative aspect-[4/5] overflow-hidden hover-scale">
+                  <Image
+                    src={`${basePath}/gia-tri.jpg`}
+                    alt="Đội ngũ YDao trong trang phục áo dài"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
               </FadeIn>
             </Parallax>
@@ -206,38 +209,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-24 lg:py-32 border-t border-neutral-200">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <FadeIn>
-            <SectionHeadingInline
-              label="Đội ngũ"
-              title="Những Con Người Đứng Sau Mỗi Ngày Trọng Đại"
-            />
-          </FadeIn>
-
-          <Stagger className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 mt-16" stagger={150}>
-            {teamMembers.map((member) => (
-              <div key={member.name} className="text-center">
-                <div className="mx-auto h-48 w-48 bg-neutral-100 rounded-full flex items-center justify-center">
-                  <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
-                    Ảnh
-                  </span>
-                </div>
-                <h3 className="mt-6 font-heading text-xl text-neutral-900">
-                  {member.name}
-                </h3>
-                <p className="text-base text-secondary-500 font-body mt-1">
-                  {member.role}
-                </p>
-                <p className="mt-3 text-base text-neutral-500 font-body max-w-xs mx-auto leading-relaxed">
-                  {member.bio}
-                </p>
-              </div>
-            ))}
-          </Stagger>
-        </div>
-      </section>
+      {/* Team — hidden temporarily */}
 
       {/* CTA */}
       <section className="py-24 lg:py-32 border-t border-neutral-200 bg-neutral-100">

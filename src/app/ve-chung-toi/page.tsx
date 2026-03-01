@@ -94,7 +94,7 @@ export default function AboutPage() {
               <FadeIn direction="left" distance={40} duration={1000}>
                 <div className="relative aspect-[4/5] overflow-hidden hover-scale">
                   <Image
-                    src={`${basePath}/gia-tri.jpg`}
+                    src={`${basePath}/su-menh.jpg`}
                     alt="Sứ mệnh YDao"
                     fill
                     className="object-cover"

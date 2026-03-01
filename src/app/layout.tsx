@@ -42,6 +42,15 @@ export const metadata: Metadata = {
     "cho thuê áo dài cưới Bình Dương",
     "bưng quả trọn gói",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   alternates: {
     canonical: SITE_URL,
   },

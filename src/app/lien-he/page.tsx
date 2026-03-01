@@ -48,13 +48,9 @@ export default function ContactPage() {
               <div className="space-y-8">
                 {[
                   {
-                    label: "Địa chỉ",
-                    value: "123 Đường ABC, Phường XYZ\nQuận 1, TP. Hồ Chí Minh",
-                  },
-                  {
                     label: "Điện thoại",
-                    value: "0901 234 567",
-                    href: "tel:0901234567",
+                    value: "0975 154 489",
+                    href: "tel:0975154489",
                   },
                   {
                     label: "Email",
@@ -64,6 +60,11 @@ export default function ContactPage() {
                   {
                     label: "Giờ làm việc",
                     value: "Thứ 2 – Thứ 7: 9:00 – 19:00\nChủ nhật: 9:00 – 17:00",
+                  },
+                  {
+                    label: "Facebook",
+                    value: "Dịch Vụ Bưng Quả TP Bình Dương",
+                    href: "https://www.facebook.com/profile.php?id=100090561309366",
                   },
                 ].map((item) => (
                   <div key={item.label} className="border-b border-neutral-200 pb-6">

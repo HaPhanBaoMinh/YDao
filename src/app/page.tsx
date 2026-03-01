@@ -4,15 +4,13 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
-import { ProductCard } from "@/components/product/ProductCard";
 import { FadeIn, Stagger } from "@/components/animation/FadeIn";
 import { Parallax } from "@/components/animation/Parallax";
-import { products, processSteps, testimonials, blogPosts } from "@/lib/data";
+import { processSteps, testimonials, blogPosts } from "@/lib/data";
 import { basePath } from "@/lib/config";
 
 export default function HomePage() {
-  const featuredProducts = products.slice(0, 4);
-  const featuredPosts = blogPosts.slice(0, 3);
+  const publishedPosts = blogPosts.filter((p) => p.content && p.content.length > 0);
 
   return (
     <>
@@ -67,76 +65,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ EDITORIAL IMAGE FRAME ═══ */}
-      <section className="pb-24 lg:pb-32">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <Parallax speed={0.06}>
-            <FadeIn duration={1200}>
-              <div className="aspect-[16/7] bg-neutral-100 flex items-center justify-center hover-scale">
-                <div className="text-center">
-                  <div className="w-16 h-px bg-neutral-300 mx-auto mb-4" />
-                  <p className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
-                    YDao — Since 2021
-                  </p>
-                  <div className="w-16 h-px bg-neutral-300 mx-auto mt-4" />
-                </div>
-              </div>
-            </FadeIn>
-          </Parallax>
-        </div>
-      </section>
+      {/* ═══ EDITORIAL IMAGE FRAME — hidden temporarily ═══ */}
 
-      {/* ═══ PRODUCT CATEGORIES ═══ */}
-      <section className="py-24 lg:py-32 border-t border-neutral-200">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <FadeIn>
-            <SectionHeading
-              title="Sản Phẩm"
-              subtitle="Áo dài và phụ kiện đồng bộ cho ngày cưới hỏi trọn vẹn."
-            />
-          </FadeIn>
-
-          <Stagger className="grid gap-8 sm:grid-cols-2" stagger={150}>
-            {[
-              {
-                title: "Áo Dài",
-                description: "Hơn 1.200 mẫu áo dài từ truyền thống đến cách tân",
-                href: "/ao-dai",
-              },
-              {
-                title: "Phụ Kiện",
-                description: "Mấn, khăn vấn, trang sức, giày và phụ kiện đồng bộ",
-                href: "/phu-kien",
-              },
-            ].map((category) => (
-              <Link
-                key={category.href}
-                href={category.href}
-                className="group block"
-              >
-                <div className="aspect-[4/5] bg-neutral-100 flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-neutral-150 hover-scale">
-                  <div className="text-center px-8">
-                    <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
-                    <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
-                      {category.title}
-                    </span>
-                    <div className="w-12 h-px bg-neutral-300 mx-auto mt-4" />
-                  </div>
-                </div>
-                <h3 className="font-heading text-2xl text-neutral-900 group-hover:text-secondary-600 transition-colors">
-                  {category.title}
-                </h3>
-                <p className="mt-2 text-base text-neutral-500 font-body">
-                  {category.description}
-                </p>
-                <span className="mt-3 inline-flex items-center gap-2 text-sm text-neutral-900 font-body arrow-slide">
-                  Khám phá <ArrowRight className="h-3.5 w-3.5" />
-                </span>
-              </Link>
-            ))}
-          </Stagger>
-        </div>
-      </section>
+      {/* ═══ PRODUCT CATEGORIES — hidden temporarily (chưa có sản phẩm) ═══ */}
 
       {/* ═══ HOW IT WORKS ═══ */}
       <section className="py-24 lg:py-32 border-t border-neutral-200 bg-neutral-100">
@@ -166,47 +97,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ FEATURED PRODUCTS ═══ */}
-      <section className="py-24 lg:py-32 border-t border-neutral-200">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <FadeIn>
-            <div className="flex items-end justify-between mb-16">
-              <SectionHeading
-                title="Áo Dài Nổi Bật"
-                align="left"
-                className="mb-0"
-              />
-              <Link
-                href="/ao-dai"
-                className="hidden sm:inline-flex items-center gap-2 text-sm font-body text-neutral-500 hover:text-neutral-900 transition-colors arrow-slide"
-              >
-                Xem tất cả <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
-          </FadeIn>
-
-          <Stagger className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4" stagger={100}>
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.slug} product={product} />
-            ))}
-          </Stagger>
-        </div>
-      </section>
+      {/* ═══ FEATURED PRODUCTS — hidden temporarily (chưa có sản phẩm) ═══ */}
 
       {/* ═══ BRAND STORY ═══ */}
-      <section className="py-24 lg:py-32 border-t border-neutral-200 bg-neutral-100">
+      <section className="py-24 lg:py-32 border-t border-neutral-200 bg-neutral-100 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="grid gap-16 lg:grid-cols-2 items-center">
             <Parallax speed={0.05}>
               <FadeIn direction="left" distance={40} duration={1000}>
-                <div className="aspect-[4/5] bg-white flex items-center justify-center hover-scale">
-                  <div className="text-center">
-                    <div className="w-12 h-px bg-neutral-300 mx-auto mb-4" />
-                    <span className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-body">
-                      Câu chuyện
-                    </span>
-                    <div className="w-12 h-px bg-neutral-300 mx-auto mt-4" />
-                  </div>
+                <div className="relative aspect-[4/5] overflow-hidden hover-scale">
+                  <Image
+                    src={`${basePath}/cau-chuyen.jpg`}
+                    alt="Đội ngũ YDao trong trang phục áo dài truyền thống"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
               </FadeIn>
             </Parallax>
@@ -276,60 +182,62 @@ export default function HomePage() {
       </section>
 
       {/* ═══ BLOG ═══ */}
-      <section className="py-24 lg:py-32 border-t border-neutral-200 bg-neutral-100">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <FadeIn>
-            <div className="flex items-end justify-between mb-16">
-              <SectionHeading
-                title="Blog"
-                subtitle="Kiến thức về cưới hỏi, áo dài và văn hóa truyền thống."
-                align="left"
-                className="mb-0"
-              />
-              <Link
-                href="/blog"
-                className="hidden sm:inline-flex items-center gap-2 text-sm font-body text-neutral-500 hover:text-neutral-900 transition-colors arrow-slide"
-              >
-                Xem tất cả <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
-          </FadeIn>
-
-          <Stagger className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" stagger={120}>
-            {featuredPosts.map((post) => (
+      {publishedPosts.length > 0 && (
+        <section className="py-24 lg:py-32 border-t border-neutral-200 bg-neutral-100">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <FadeIn>
+              <div className="flex items-end justify-between mb-16">
+                <SectionHeading
+                  title="Blog"
+                  subtitle="Kiến thức về cưới hỏi, áo dài và văn hóa truyền thống."
+                  align="left"
+                  className="mb-0"
+                />
                 <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="group block"
+                  href="/blog"
+                  className="hidden sm:inline-flex items-center gap-2 text-sm font-body text-neutral-500 hover:text-neutral-900 transition-colors arrow-slide"
                 >
-                  <div className="relative aspect-[3/2] bg-white flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-50 hover-scale overflow-hidden">
-                    {post.image.startsWith("/blog/") ? (
-                      <Image
-                        src={`${basePath}${post.image}`}
-                        alt={post.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                    ) : (
-                      <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
-                        {post.category}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-2">
-                    <span>{post.category}</span>
-                    <span className="w-4 h-px bg-neutral-300" />
-                    <span>{post.readTime}</span>
-                  </div>
-                  <h3 className="font-heading text-xl text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug">
-                    {post.title}
-                  </h3>
+                  Xem tất cả <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
-            ))}
-          </Stagger>
-        </div>
-      </section>
+              </div>
+            </FadeIn>
+
+            <Stagger className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" stagger={120}>
+              {publishedPosts.map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="group block"
+                  >
+                    <div className="relative aspect-[3/2] bg-white flex items-center justify-center mb-5 transition-all duration-500 group-hover:bg-neutral-50 hover-scale overflow-hidden">
+                      {post.image.startsWith("/blog/") ? (
+                        <Image
+                          src={`${basePath}${post.image}`}
+                          alt={post.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                        />
+                      ) : (
+                        <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
+                          {post.category}
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-3 text-xs text-neutral-400 font-body uppercase tracking-wider mb-2">
+                      <span>{post.category}</span>
+                      <span className="w-4 h-px bg-neutral-300" />
+                      <span>{post.readTime}</span>
+                    </div>
+                    <h3 className="font-heading text-xl text-neutral-900 group-hover:text-secondary-600 transition-colors leading-snug">
+                      {post.title}
+                    </h3>
+                  </Link>
+              ))}
+            </Stagger>
+          </div>
+        </section>
+      )}
 
       {/* ═══ CTA ═══ */}
       <section className="py-24 lg:py-32 border-t border-neutral-200">

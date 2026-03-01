@@ -18,8 +18,6 @@ const footerLinks = {
   support: {
     title: "Hỗ trợ",
     links: [
-      { label: "Chính sách cho thuê", href: "/chinh-sach" },
-      { label: "Hướng dẫn chọn size", href: "/huong-dan-size" },
       { label: "Liên hệ", href: "/lien-he" },
     ],
   },
@@ -47,7 +45,7 @@ export function Footer() {
           {/* Link columns */}
           {Object.values(footerLinks).map((section) => (
             <div key={section.title}>
-              <h3 className="text-xs font-medium uppercase tracking-[0.15em] text-neutral-400 font-body">
+              <h3 className="text-sm font-medium uppercase tracking-[0.15em] text-neutral-900 font-body">
                 {section.title}
               </h3>
               <ul className="mt-5 space-y-3">
@@ -55,7 +53,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-base text-neutral-600 hover:text-neutral-900 transition-colors duration-300"
+                      className="text-base lg:text-lg text-neutral-600 hover:text-neutral-900 transition-colors duration-300"
                     >
                       {link.label}
                     </Link>

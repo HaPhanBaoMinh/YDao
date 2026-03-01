@@ -13,7 +13,9 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return blogPosts.map((p) => ({ slug: p.slug }));
+  return blogPosts
+    .filter((p) => p.content && p.content.length > 0)
+    .map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -109,16 +111,40 @@ function groupBulletItems(blocks: BlogBlock[]): (BlogBlock | BlogBlock[])[] {
   return grouped;
 }
 
+function ArticleJsonLd({ post }: { post: (typeof blogPosts)[number] }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    author: { "@type": "Organization", name: "YDao" },
+    publisher: { "@type": "Organization", name: "YDao" },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://thefish.vn/blog/${post.slug}`,
+    },
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  const related = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
+  const publishedPosts = blogPosts.filter((p) => p.content && p.content.length > 0);
+  const related = publishedPosts.filter((p) => p.slug !== slug).slice(0, 3);
   const hasContent = post.content && post.content.length > 0;
 
   return (
     <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+      <ArticleJsonLd post={post} />
       <Breadcrumb
         items={[
           { label: "Blog", href: "/blog" },

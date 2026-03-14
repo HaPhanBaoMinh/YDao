@@ -260,6 +260,259 @@ export const services: Service[] = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "giai-thich-cac-thanh-phan-trong-mam-bung-qua",
+    title: "Giải thích các thành phần trong mâm bưng quả (mâm sính lễ)",
+    excerpt: "Trong lễ ăn hỏi của người Việt, mâm bưng quả không chỉ là lễ vật mà còn là lời chào trang trọng, thể hiện sự tôn trọng và mong muốn gắn kết hai gia đình. Tìm hiểu ý nghĩa từng mâm lễ.",
+    image: "/blog/mam-bung-qua-trau-cau.png",
+    date: "2026-03-14",
+    category: "Kiến thức",
+    readTime: "7 phút đọc",
+    content: [
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Trong lễ ăn hỏi (đính hôn) của người Việt, " },
+          { text: "mâm bưng quả", bold: true },
+          { text: " hay " },
+          { text: "tráp sính lễ", bold: true },
+          { text: " không chỉ là \u201Clễ vật mang sang nhà gái\u201D, mà còn là lời chào trang trọng của nhà trai, thể hiện sự tôn trọng với nhà gái và mong muốn gắn kết hai gia đình. Vì vậy, mỗi mâm lễ thường được chuẩn bị chỉn chu, vừa đẹp mắt vừa gửi gắm những lời chúc tốt lành." },
+        ],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Tùy vùng miền, số lượng mâm có thể là " },
+          { text: "5, 7, 9 hoặc 11 tráp", bold: true },
+          { text: ". Thành phần từng tráp cũng có thể thay đổi, nhưng dưới đây là những mâm phổ biến và ý nghĩa thường gặp." },
+        ],
+      },
+      {
+        type: "heading_2",
+        richText: [{ text: "1) Mâm trầu cau – biểu tượng của nghĩa tình vợ chồng" }],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Trầu cau gần như là mâm \u201Cbắt buộc\u201D trong lễ ăn hỏi. Dân gian có câu \u201C" },
+          { text: "miếng trầu là đầu câu chuyện", bold: true },
+          { text: "\u201D, nên trầu cau đại diện cho lời mở đầu chính thức, đàng hoàng giữa hai họ." },
+        ],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Về ý nghĩa, trầu cau gắn với chuyện tích dân gian, tượng trưng cho " },
+          { text: "tình nghĩa bền chặt, thủy chung", bold: true },
+          { text: ". Trầu têm cánh phượng còn thể hiện sự khéo léo và tinh tế, đồng thời làm mâm lễ trang trọng hơn." },
+        ],
+      },
+      {
+        type: "image",
+        imageUrl: "/blog/mam-bung-qua-trau-cau.png",
+        imageAlt: "Mâm trầu cau trong lễ ăn hỏi",
+      },
+      {
+        type: "heading_2",
+        richText: [{ text: "2) Mâm bánh phu thê (bánh su sê) – chúc hôn nhân viên mãn" }],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Bánh phu thê thường tượng trưng cho sự " },
+          { text: "đồng lòng, có đôi có cặp", bold: true },
+          { text: ", mong cuộc sống vợ chồng hòa hợp và ngọt ngào. Ở nhiều nơi, bánh được xếp số lượng đẹp, trình bày ngay ngắn, vừa mang ý nghĩa vừa rất \u201Căn ảnh\u201D trong ngày lễ." },
+        ],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Tùy vùng miền, gia đình có thể thay bằng/đi kèm " },
+          { text: "bánh cốm, bánh đậu xanh", bold: true },
+          { text: "\u2026 nhưng tinh thần chung vẫn là lời chúc " },
+          { text: "tròn đầy, êm ấm", bold: true },
+          { text: "." },
+        ],
+      },
+      {
+        type: "image",
+        imageUrl: "/blog/mam-bung-qua-banh-phu-the.png",
+        imageAlt: "Mâm bánh phu thê trong lễ ăn hỏi",
+      },
+      {
+        type: "heading_2",
+        richText: [{ text: "3) Mâm trà – rượu – sự kính trọng với gia tiên và hai họ" }],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Trà và rượu thường dùng trong phần " },
+          { text: "dâng lên bàn thờ gia tiên", bold: true },
+          { text: " và trong nghi lễ thưa chuyện. Đây là mâm thể hiện sự " },
+          { text: "lễ phép, nghiêm cẩn", bold: true },
+          { text: ", đồng thời mang thông điệp: hôn sự này có sự chứng giám của tổ tiên và sự đồng thuận của hai gia đình." },
+        ],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Khi chuẩn bị, điều quan trọng là chọn sản phẩm " },
+          { text: "lịch sự, nhãn mác rõ ràng", bold: true },
+          { text: ", đóng gói gọn gàng để tổng thể mâm lễ trông sang." },
+        ],
+      },
+      {
+        type: "image",
+        imageUrl: "/blog/mam-bung-qua-tra-ruou.png",
+        imageAlt: "Mâm trà rượu trong lễ ăn hỏi",
+      },
+      {
+        type: "heading_2",
+        richText: [{ text: "4) Mâm trái cây (ngũ quả) – cầu chúc sung túc, đủ đầy" }],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Mâm trái cây đại diện cho " },
+          { text: "lộc, phúc", bold: true },
+          { text: " và sự đủ đầy. Tùy mùa và điều kiện, nhà trai có thể chọn các loại quả tươi ngon, màu sắc hài hòa để mâm vừa đẹp vừa có ý nghĩa." },
+        ],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Một số gia đình chọn quả theo \u201Ctên gọi may mắn\u201D (tùy cách hiểu từng vùng), nhưng quan trọng nhất vẫn là:" },
+        ],
+      },
+      {
+        type: "bulleted_list_item",
+        richText: [
+          { text: "Trái cây " },
+          { text: "tươi, đều, không dập", bold: true },
+        ],
+      },
+      {
+        type: "bulleted_list_item",
+        richText: [
+          { text: "Màu sắc " },
+          { text: "hài hòa", bold: true },
+          { text: " (lên hình đẹp)" },
+        ],
+      },
+      {
+        type: "bulleted_list_item",
+        richText: [
+          { text: "Sắp xếp " },
+          { text: "cân đối, chắc chắn", bold: true },
+        ],
+      },
+      {
+        type: "image",
+        imageUrl: "/blog/mam-bung-qua-trai-cay.png",
+        imageAlt: "Mâm trái cây ngũ quả trong lễ ăn hỏi",
+      },
+      {
+        type: "heading_2",
+        richText: [{ text: "5) Mâm xôi – gà (hoặc heo quay) – lời chúc ấm no, khởi đầu thuận lợi" }],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Nhiều nơi chuộng " },
+          { text: "xôi gấc", bold: true },
+          { text: " vì màu đỏ tượng trưng cho hỷ sự, may mắn. Xôi đại diện cho sự " },
+          { text: "no ấm", bold: true },
+          { text: ", cuộc sống đủ đầy." },
+        ],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Đi kèm xôi, mâm thường có " },
+          { text: "gà luộc", bold: true },
+          { text: " (dáng đẹp, bày trang trọng) hoặc " },
+          { text: "heo quay", bold: true },
+          { text: " (phổ biến ở một số khu vực). Ý nghĩa chung là lời chúc gia đình mới " },
+          { text: "thịnh vượng", bold: true },
+          { text: ", mọi việc khởi đầu suôn sẻ." },
+        ],
+      },
+      {
+        type: "image",
+        imageUrl: "/blog/mam-bung-qua-xoi-ga.png",
+        imageAlt: "Mâm xôi gà trong lễ ăn hỏi",
+      },
+      {
+        type: "heading_2",
+        richText: [{ text: "6) Mâm mứt – kẹo (hoặc hạt sen, các loại hạt) – ngọt ngào và bền chặt" }],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Mâm mứt, kẹo tượng trưng cho sự " },
+          { text: "ngọt ngào", bold: true },
+          { text: ", mong cuộc sống vợ chồng vui vẻ, thuận hòa. Một số nơi có " },
+          { text: "hạt sen", bold: true },
+          { text: " với ý nghĩa an lành, viên mãn; hoặc các loại hạt, mứt truyền thống để mâm lễ trông phong phú." },
+        ],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Đây cũng là mâm thường được nhà gái chia lộc cho họ hàng sau lễ, nên yếu tố " },
+          { text: "dễ chia, dễ dùng", bold: true },
+          { text: " cũng được nhiều gia đình ưu tiên." },
+        ],
+      },
+      {
+        type: "image",
+        imageUrl: "/blog/mam-bung-qua-mut-keo.png",
+        imageAlt: "Mâm mứt kẹo trong lễ ăn hỏi",
+      },
+      {
+        type: "heading_2",
+        richText: [{ text: "7) Mâm trang sức / tiền nạp tài (tùy tập tục) – thành ý và trách nhiệm" }],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Tùy sự thống nhất của hai gia đình, lễ ăn hỏi có thể có phần " },
+          { text: "nạp tài", bold: true },
+          { text: " (tiền mặt) hoặc " },
+          { text: "trang sức", bold: true },
+          { text: ". Ý nghĩa thường được hiểu là sự " },
+          { text: "thành ý", bold: true },
+          { text: " và lời cam kết trách nhiệm của nhà trai." },
+        ],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Lưu ý: mức nạp tài và hình thức trao nhận nên dựa trên sự thoải mái, tôn trọng và đồng thuận giữa hai bên, để ngày vui diễn ra nhẹ nhàng." },
+        ],
+      },
+      {
+        type: "image",
+        imageUrl: "/blog/mam-bung-qua-nap-tai.png",
+        imageAlt: "Mâm trang sức nạp tài trong lễ ăn hỏi",
+      },
+      {
+        type: "divider",
+      },
+      {
+        type: "heading_2",
+        richText: [{ text: "Kết luận" }],
+      },
+      {
+        type: "paragraph",
+        richText: [
+          { text: "Nhìn qua, mâm bưng quả là những lễ vật quen thuộc; nhưng trong lễ ăn hỏi, mỗi mâm đều mang một lời chúc: " },
+          { text: "thủy chung – viên mãn – đủ đầy – may mắn – thuận hòa", bold: true },
+          { text: ". Khi hiểu ý nghĩa các thành phần trong mâm sính lễ, bạn sẽ thấy nghi thức bưng quả không chỉ đẹp về hình thức mà còn sâu sắc về văn hóa và tình cảm giữa hai gia đình." },
+        ],
+      },
+    ],
+  },
+  {
     slug: "nguon-goc-va-y-nghia-nghi-thuc-bung-qua",
     title: "Nguồn gốc và Ý nghĩa của Nghi thức Bưng Quả trong Lễ cưới Việt Nam",
     excerpt: "Trong văn hóa cưới hỏi Việt Nam, khoảnh khắc đoàn nhà trai chỉnh tề mang tráp lễ sang nhà gái không chỉ là một thủ tục — đó là lời chào trang trọng giữa hai gia đình, là dấu mốc mở đầu cho hành trình hôn nhân.",

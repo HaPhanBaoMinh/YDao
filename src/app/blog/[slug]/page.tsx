@@ -173,62 +173,58 @@ export default async function BlogPostPage({ params }: Props) {
         </FadeIn>
 
         {/* Cover image */}
-        <FadeIn delay={200} duration={1000}>
-          {post.image.startsWith("/blog/") ? (
-            <div className="relative aspect-[2/1] w-full overflow-hidden bg-neutral-100 mb-12">
-              <Image
-                src={`${basePath}${post.image}`}
-                alt={post.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 672px"
-                priority
-              />
-            </div>
-          ) : (
-            <div className="aspect-[2/1] bg-neutral-100 flex items-center justify-center mb-12 hover-scale">
-              <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
-                {post.category}
-              </span>
-            </div>
-          )}
-        </FadeIn>
+        {post.image.startsWith("/blog/") ? (
+          <div className="relative aspect-[2/1] w-full overflow-hidden bg-neutral-100 mb-12">
+            <Image
+              src={`${basePath}${post.image}`}
+              alt={post.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 672px"
+              priority
+            />
+          </div>
+        ) : (
+          <div className="aspect-[2/1] bg-neutral-100 flex items-center justify-center mb-12 hover-scale">
+            <span className="text-xs uppercase tracking-[0.15em] text-neutral-400 font-body">
+              {post.category}
+            </span>
+          </div>
+        )}
 
         {/* Article Body */}
-        <FadeIn delay={300} duration={900}>
-          <div className="prose prose-neutral max-w-none font-body prose-headings:font-heading prose-headings:font-normal prose-headings:tracking-tight prose-a:text-neutral-900 prose-a:underline-offset-4 prose-img:rounded-none">
-            {hasContent ? (
-              groupBulletItems(post.content!).map((item, i) => {
-                if (Array.isArray(item)) {
-                  return (
-                    <ul key={i}>
-                      {item.map((bullet, j) => (
-                        <li key={j}>
-                          {bullet.richText && (
-                            <RichTextRenderer segments={bullet.richText} />
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  );
-                }
-                return <BlockRenderer key={i} block={item} basePath={basePath} />;
-              })
-            ) : (
-              <>
-                <p>
-                  Trong văn hóa cưới hỏi Việt Nam, mỗi nghi lễ đều mang trong mình
-                  những ý nghĩa sâu sắc về tình yêu, lòng hiếu thảo và sự kết nối
-                  giữa hai gia đình.
-                </p>
-                <h2 className="font-heading text-h2 text-neutral-900 mt-14 mb-5 pb-3 border-b border-neutral-200">Ý Nghĩa Của Truyền Thống</h2>
-                <p>
-                  Bài viết đang được cập nhật nội dung...
-                </p>
-              </>
-            )}
-          </div>
-        </FadeIn>
+        <div className="prose prose-neutral max-w-none font-body prose-headings:font-heading prose-headings:font-normal prose-headings:tracking-tight prose-a:text-neutral-900 prose-a:underline-offset-4 prose-img:rounded-none">
+          {hasContent ? (
+            groupBulletItems(post.content!).map((item, i) => {
+              if (Array.isArray(item)) {
+                return (
+                  <ul key={i}>
+                    {item.map((bullet, j) => (
+                      <li key={j}>
+                        {bullet.richText && (
+                          <RichTextRenderer segments={bullet.richText} />
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                );
+              }
+              return <BlockRenderer key={i} block={item} basePath={basePath} />;
+            })
+          ) : (
+            <>
+              <p>
+                Trong văn hóa cưới hỏi Việt Nam, mỗi nghi lễ đều mang trong mình
+                những ý nghĩa sâu sắc về tình yêu, lòng hiếu thảo và sự kết nối
+                giữa hai gia đình.
+              </p>
+              <h2 className="font-heading text-h2 text-neutral-900 mt-14 mb-5 pb-3 border-b border-neutral-200">Ý Nghĩa Của Truyền Thống</h2>
+              <p>
+                Bài viết đang được cập nhật nội dung...
+              </p>
+            </>
+          )}
+        </div>
 
         {/* Back link */}
         <div className="mt-12 pt-8 border-t border-neutral-200">
